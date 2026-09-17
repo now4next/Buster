@@ -10,3 +10,24 @@ document.querySelectorAll('[data-project]').forEach(button=>button.addEventListe
 document.querySelector('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 document.querySelectorAll('[data-service]').forEach(a=>a.addEventListener('click',()=>document.querySelector('[name=service]').value=a.dataset.service));
 document.querySelector('#brief-form').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget);const text=`BUSTER 프로젝트 브리프\n\n서비스: ${f.get('service')}\n프로젝트: ${f.get('brand')}\n\n함께 풀고 싶은 문제\n${f.get('problem')}\n\n홈페이지 목업에서 작성한 검토용 초안입니다. 외부로 전송되지 않았습니다.\n`;const url=URL.createObjectURL(new Blob(['\uFEFF'+text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='BUSTER-project-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);document.querySelector('#form-status').textContent='브리프 파일을 만들었습니다. 다운로드한 내용을 확인해 주세요.'});
+
+const root=document.documentElement;
+const hero=document.querySelector('.hero');
+function updateScrollMotion(){
+  const max=Math.max(1,root.scrollHeight-innerHeight);
+  root.style.setProperty('--page-progress',Math.min(1,scrollY/max).toFixed(4));
+  const heroMax=Math.max(1,hero.offsetHeight);
+  root.style.setProperty('--hero-progress',Math.min(1,scrollY/heroMax).toFixed(4));
+}
+addEventListener('scroll',updateScrollMotion,{passive:true});
+addEventListener('resize',updateScrollMotion,{passive:true});
+updateScrollMotion();
+
+const revealTargets=document.querySelectorAll('.section-title,.studio>div,.work-card,.axis-intro,.axis-card,.service-list,.process-grid article,.contact-layout>div,.contact form');
+revealTargets.forEach(el=>el.classList.add('reveal'));
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+  }),{threshold:.12,rootMargin:'0px 0px -7%'});
+  revealTargets.forEach(el=>observer.observe(el));
+}else revealTargets.forEach(el=>el.classList.add('is-visible'));
