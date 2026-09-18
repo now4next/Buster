@@ -13,11 +13,18 @@ document.querySelector('#brief-form').addEventListener('submit',e=>{e.preventDef
 
 const root=document.documentElement;
 const hero=document.querySelector('.hero');
+const breakthrough=document.querySelector('.breakthrough');
 function updateScrollMotion(){
   const max=Math.max(1,root.scrollHeight-innerHeight);
   root.style.setProperty('--page-progress',Math.min(1,scrollY/max).toFixed(4));
   const heroMax=Math.max(1,hero.offsetHeight);
   root.style.setProperty('--hero-progress',Math.min(1,scrollY/heroMax).toFixed(4));
+  if(breakthrough){
+    const rect=breakthrough.getBoundingClientRect();
+    const travel=Math.max(1,breakthrough.offsetHeight-innerHeight);
+    const progress=Math.min(1,Math.max(0,-rect.top/travel));
+    breakthrough.style.setProperty('--break-progress',progress.toFixed(4));
+  }
 }
 addEventListener('scroll',updateScrollMotion,{passive:true});
 addEventListener('resize',updateScrollMotion,{passive:true});
