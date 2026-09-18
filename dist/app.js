@@ -24,6 +24,10 @@ function updateScrollMotion(){
     const travel=Math.max(1,breakthrough.offsetHeight-innerHeight);
     const progress=Math.min(1,Math.max(0,-rect.top/travel));
     breakthrough.style.setProperty('--break-progress',progress.toFixed(4));
+    breakthrough.style.setProperty('--break-crack',Math.min(1,Math.max(0,(progress-.10)/.30)).toFixed(4));
+    breakthrough.style.setProperty('--break-open',Math.min(1,Math.max(0,(progress-.34)/.66)).toFixed(4));
+    breakthrough.style.setProperty('--break-copy-fade',Math.min(1,Math.max(0,(progress-.38)/.30)).toFixed(4));
+    breakthrough.style.setProperty('--break-result-in',Math.min(1,Math.max(0,(progress-.76)/.20)).toFixed(4));
   }
 }
 addEventListener('scroll',updateScrollMotion,{passive:true});
