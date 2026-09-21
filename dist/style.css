@@ -23,11 +23,12 @@ nav{display:flex;gap:35px;align-items:center;font-size:14px;font-weight:600}
 .hero-bottom>p{font-size:30px;font-weight:700;line-height:1.45;margin:0}
 .hero-description{font-size:16px;line-height:1.8;margin:0 0 19px}
 .text-link{font-size:14px;border-bottom:1px solid;display:flex;gap:60px;padding-bottom:8px}
-.hero-art{height:370px;background:var(--blue);position:relative;overflow:hidden}
+.hero-art{height:370px;background:#dfe3f5;position:relative;overflow:hidden}
 .hero-art{transform:scale(calc(1 - var(--hero-progress) * .018));transform-origin:center;will-change:transform}
 .hero-art img{width:100%;height:100%;object-fit:cover;object-position:center 50%}
 .hero-art img{transform:scale(1.06) translateY(calc(var(--hero-progress) * 18px));will-change:transform}
-.art-label{position:absolute;left:30px;bottom:25px;color:white;font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(25px,4.7vw,74px);font-weight:700;line-height:1}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(246,246,242,.28) 0%,rgba(246,246,242,.08) 43%,transparent 66%);pointer-events:none}
+.art-label{position:absolute;z-index:1;left:30px;bottom:25px;color:#191919;font-family:'Barlow Condensed',Impact,sans-serif;font-size:clamp(25px,4.7vw,74px);font-weight:800;line-height:1;letter-spacing:-.02em}
 .hero-foot{padding:18px 0 22px;border-bottom:1px solid}
 .breakthrough{--break-progress:0;--break-crack:0;--break-open:0;--break-copy-fade:0;--break-result-in:0;position:relative;height:205vh;background:var(--paper)}
 .break-stage{position:sticky;top:0;height:100svh;min-height:640px;overflow:hidden;background:var(--paper);isolation:isolate}
@@ -194,7 +195,7 @@ dialog h2{font-size:40px}
 .breakthrough{height:auto}.break-stage{position:relative;height:72vh}.break-wall{opacity:.06;transform:none}.break-copy{opacity:.1}.break-copy strong{transform:none}.break-cracks,.break-fragments{display:none}.break-aperture{transform:translate(-50%,-50%) scale(16)}.break-result{opacity:1;transform:none}
 }
 
-.image-credit{position:absolute;right:20px;top:20px;color:white;font:10px Arial;letter-spacing:1px}
+.image-credit{position:absolute;z-index:1;right:20px;top:20px;color:#30303a;font:10px Arial;letter-spacing:1px}
 
 h1,h2,h3,p,strong{word-break:keep-all;overflow-wrap:break-word}
 @media(max-width:540px){.process h2{font-size:31px}
