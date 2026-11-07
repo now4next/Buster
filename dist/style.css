@@ -154,7 +154,6 @@ h3{margin:0}
 .contact form{display:flex;flex-direction:column;gap:20px}
 .customer-fields{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .contact label{display:flex;flex-direction:column;gap:10px;font-size:14px}
-.contact label .optional{font-size:10px;color:#d7defe;margin-left:6px}
 .contact input,.contact textarea,.contact select{width:100%;border:0;border-bottom:1px solid #9baefb;background:transparent;color:white;padding:9px 0;border-radius:0;outline-offset:5px}
 .contact option{color:#171717;background:white}
 .contact input::placeholder,.contact textarea::placeholder{color:#c4cdfc}
