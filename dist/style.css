@@ -156,9 +156,14 @@ h3{margin:0}
 .contact input,.contact textarea,.contact select{width:100%;border:0;border-bottom:1px solid #9baefb;background:transparent;color:white;padding:9px 0;border-radius:0;outline-offset:5px}
 .contact option{color:#171717;background:white}
 .contact input::placeholder,.contact textarea::placeholder{color:#c4cdfc}
-.brief-button{background:#f6f6f2;border:0;color:#171717;padding:17px 20px;display:flex;justify-content:space-between;cursor:pointer}
+.brief-button{background:#f6f6f2;border:1px solid transparent;color:#171717;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px;cursor:pointer;text-align:left;transition:background .25s ease,transform .25s ease,border-color .25s ease}
+.brief-button:hover{background:#d8ff37;border-color:#171717;transform:translateY(-2px)}
+.brief-copy{display:flex;flex-direction:column;gap:6px}.brief-copy strong{font-size:16px}.brief-copy>span{font-size:12px;color:#5e5e5e}
+.brief-action{display:flex;align-items:center;gap:20px}.contact .brief-action small{color:#171717;font:10px Arial,sans-serif;letter-spacing:1px;border:1px solid #777;border-radius:20px;padding:5px 8px}.brief-action b{font-size:20px;font-weight:400;transition:transform .25s ease}.brief-button:hover .brief-action b{transform:translate(3px,-3px)}
+.privacy-note{display:grid;grid-template-columns:110px 1fr;gap:15px;padding-top:4px;color:#d7defe}.privacy-note>span{font:10px Arial,sans-serif;letter-spacing:1.2px;padding-top:3px}.privacy-note p{font-size:12px;line-height:1.8;margin:0}
 .contact small{font-size:12px;color:#d7defe;line-height:1.8}
-#form-status{font-size:14px;margin:0}
+#form-status{display:none;font-size:13px;line-height:1.7;margin:0;padding:14px 16px;background:#d8ff37;color:#171717;border-left:4px solid #171717}
+#form-status.is-visible{display:block}
 footer{display:flex;align-items:center;justify-content:space-between;padding:40px 4%;gap:25px}
 footer p{font-size:14px}
 footer>span{font:11px Arial}
@@ -235,6 +240,7 @@ footer{flex-wrap:wrap}
 .process-grid p{font-size:14px}
 .contact-layout{grid-template-columns:1fr;gap:35px}
 .contact h2{font-size:60px}
+.privacy-note{grid-template-columns:1fr;gap:7px}.brief-button{padding:18px}.brief-copy>span{display:none}
 footer{padding:30px 5%;gap:8px}
 footer p{width:100%;font-size:12px}
 dialog{padding:30px}
