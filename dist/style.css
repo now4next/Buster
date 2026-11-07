@@ -127,11 +127,13 @@ h3{margin:0}
 .case-heading h3{font-size:clamp(36px,5vw,70px);letter-spacing:-.055em;margin-top:18px}
 .case-heading p{max-width:450px;margin:0;font-size:15px;line-height:1.8;color:#606060}
 .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#aaa;border:1px solid #aaa}
-.case-card{min-height:390px;border:0;background:var(--paper);color:var(--ink);padding:25px;text-align:left;display:flex;flex-direction:column;cursor:pointer;transition:transform .25s ease,background .25s ease;position:relative;overflow:hidden}
+.case-card{min-height:570px;border:0;background:var(--paper);color:var(--ink);padding:25px;text-align:left;display:flex;flex-direction:column;cursor:pointer;transition:transform .25s ease,background .25s ease;position:relative;overflow:hidden}
 .case-card:before{content:"";position:absolute;right:-55px;top:-55px;width:150px;height:150px;border:1px solid currentColor;border-radius:50%;opacity:.14;transition:transform .35s ease}
 .case-card:hover{transform:translateY(-7px);z-index:1}.case-card:hover:before{transform:scale(1.35)}
 .case-card>span{font:10px Arial,sans-serif;letter-spacing:1.2px}
-.case-card>strong{font:900 clamp(47px,5vw,76px)/.9 'Barlow Condensed',Impact,sans-serif;margin-top:48px;letter-spacing:-.035em}
+.case-card>img{display:block;width:calc(100% + 50px);aspect-ratio:4/3;object-fit:cover;margin:20px -25px 0;filter:saturate(.88);transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .3s ease}
+.case-card:hover>img{transform:scale(1.035);filter:saturate(1)}
+.case-card>strong{font:900 clamp(47px,5vw,76px)/.9 'Barlow Condensed',Impact,sans-serif;margin-top:23px;letter-spacing:-.035em}
 .case-card>p{font-size:22px;font-weight:700;line-height:1.45;letter-spacing:-.045em;margin:24px 0 auto}
 .case-card>small{font:10px Arial,sans-serif;letter-spacing:.8px;margin-bottom:17px}
 .case-card>b{font:12px Arial,sans-serif;font-weight:400;border-top:1px solid;padding-top:14px}
@@ -171,6 +173,7 @@ dialog h2{font-family:'Barlow Condensed',sans-serif;font-size:55px;letter-spacin
 .case-dialog-meta{display:flex;justify-content:space-between;gap:30px;clear:both;padding-top:12px;font:10px Arial,sans-serif;letter-spacing:1.2px;color:#676767}
 .case-dialog h2{font:900 clamp(62px,9vw,120px)/.85 'Barlow Condensed',Impact,sans-serif;margin:42px 0 8px}
 .case-dialog>p#case-industry{font:12px Arial,sans-serif;letter-spacing:1.3px;text-transform:uppercase}
+.case-dialog-image{display:block;width:100%;aspect-ratio:16/8;object-fit:cover;margin:34px 0 0}
 .case-dialog blockquote{margin:46px 0;padding:0 0 0 24px;border-left:5px solid var(--blue);font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.3;letter-spacing:-.05em}
 .case-content{display:grid;grid-template-columns:1fr 1fr;gap:30px 48px;border-top:1px solid;padding-top:30px}
 .case-content section{border-top:1px solid #c7c7c0;padding-top:14px}
@@ -203,7 +206,7 @@ nav{gap:18px}
 .service-list summary>span:nth-last-child(2){display:none}
 .service-body{padding-left:40px;gap:25px}
 .family-head{grid-template-columns:1fr;gap:20px}.family-head p{font-size:16px}.service-family+.service-family{margin-top:60px}
-.case-grid{grid-template-columns:1fr 1fr}.case-heading{align-items:flex-start;flex-direction:column;gap:20px}.case-card{min-height:350px}
+.case-grid{grid-template-columns:1fr 1fr}.case-heading{align-items:flex-start;flex-direction:column;gap:20px}.case-card{min-height:560px}
 footer{flex-wrap:wrap}
 }
 @media(max-width:540px){nav{gap:15px;font-size:12px}
@@ -226,7 +229,7 @@ footer{flex-wrap:wrap}
 .service-body{grid-template-columns:1fr;padding:0 0 25px 0}
 .service-scenario{padding:20px}.service-scenario strong{font-size:18px}.service-body a{grid-column:auto}
 .service-list h3{font-size:34px}
-.concept-cases{margin-top:75px}.case-grid{grid-template-columns:1fr}.case-card{min-height:330px}.case-card>strong{font-size:64px}.case-dialog{padding:28px}.case-dialog-meta{flex-direction:column;gap:6px}.case-content{grid-template-columns:1fr}.case-dialog blockquote{margin:32px 0}
+.concept-cases{margin-top:75px}.case-grid{grid-template-columns:1fr}.case-card{min-height:540px}.case-card>strong{font-size:64px}.case-dialog{padding:28px}.case-dialog-meta{flex-direction:column;gap:6px}.case-content{grid-template-columns:1fr}.case-dialog-image{aspect-ratio:4/3}.case-dialog blockquote{margin:32px 0}
 .process-grid{gap:25px 15px}
 .process-grid h3{font-size:18px}
 .process-grid p{font-size:14px}
