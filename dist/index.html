@@ -280,6 +280,14 @@
 <p>지금 고민하는 제품, 브랜드, 혹은<br>아직 이름 없는 아이디어부터 들려주세요.</p>
 </div>
 <form id="brief-form">
+<div class="customer-fields">
+<label>이름<input name="name" autocomplete="name" placeholder="성함을 입력해 주세요" required maxlength="50">
+</label>
+<label>이메일<input name="email" type="email" autocomplete="email" placeholder="name@company.com" required maxlength="120">
+</label>
+</div>
+<label>연락처 <span class="optional">선택</span><input name="phone" type="tel" autocomplete="tel" placeholder="010-0000-0000" maxlength="30">
+</label>
 <label>관심 있는 서비스<select name="service">
 <option>BUSTER SHOT</option>
 <option>BUSTER BRAND</option>
@@ -290,16 +298,15 @@
 <option>아직 잘 모르겠어요</option>
 </select>
 </label>
-<label>브랜드 / 프로젝트명<input name="brand" placeholder="예: 새로운 러닝화 브랜드" required maxlength="100">
-</label>
-<label>함께 풀고 싶은 문제<textarea name="problem" placeholder="지금의 고민과 만들고 싶은 변화를 적어주세요." required rows="3" maxlength="2000">
+<label>함께 풀고 싶은 것<textarea name="problem" placeholder="지금 겪고 있는 문제와 만들고 싶은 변화를 자유롭게 적어주세요." required rows="5" minlength="20" maxlength="3000">
 </textarea>
 </label>
+<label class="consent"><input name="privacy" type="checkbox" required><span><b>개인정보 수집 및 이용에 동의합니다.</b> 문의 답변을 위해 이름, 이메일과 선택 입력한 연락처를 수집하며 상담 완료 후 6개월 이내 파기합니다.</span></label>
+<label class="honeypot" aria-hidden="true">회사 웹사이트<input name="website" tabindex="-1" autocomplete="off"></label>
 <button class="brief-button" type="submit">
-<span class="brief-copy"><strong>내 프로젝트 브리프 만들기</strong><span>작성한 생각을 파일로 정리합니다.</span></span>
-<span class="brief-action"><small>TXT</small><b>↗</b></span>
+<span class="brief-copy"><strong>24시간 안에 제안 받기</strong><span>확인 후 입력하신 이메일로 연락드립니다.</span></span>
+<span class="brief-action"><b>↗</b></span>
 </button>
-<div class="privacy-note"><span>PRIVATE DRAFT</span><p>작성 내용은 자동으로 전송되지 않습니다.<br>저장된 파일은 충분히 검토한 뒤 BUSTER에 전달할 수 있습니다.</p></div>
 <p id="form-status" role="status">
 </p>
 </form>
