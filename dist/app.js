@@ -45,7 +45,7 @@ addEventListener('scroll',updateScrollMotion,{passive:true});
 addEventListener('resize',updateScrollMotion,{passive:true});
 updateScrollMotion();
 
-const revealTargets=document.querySelectorAll('.section-title,.studio>div,.work-card,.axis-intro,.axis-card,.service-list,.case-heading,.case-card,.process-grid article,.contact-layout>div,.contact form');
+const revealTargets=document.querySelectorAll('.section-title,.studio>div,.film-intro>div,.film-storyboard,.film-beats article,.work-card,.axis-intro,.axis-card,.service-list,.case-heading,.case-card,.process-grid article,.contact-layout>div,.contact form');
 revealTargets.forEach(el=>el.classList.add('reveal'));
 if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
