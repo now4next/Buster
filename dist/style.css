@@ -189,6 +189,7 @@ h3{margin:0}
 footer{display:flex;align-items:center;justify-content:space-between;padding:40px 4%;gap:25px}
 footer p{font-size:14px}
 footer>span{font:11px Arial}
+.footer-credit{margin-left:auto;padding-left:28px;border-left:1px solid #aaa;display:grid;grid-template-columns:auto auto;column-gap:28px;align-items:end}.footer-credit strong{grid-column:1/-1;font:700 18px/1.1 'Barlow Condensed',Arial,sans-serif;letter-spacing:.03em;margin-bottom:8px}.footer-credit span,.footer-credit small{font:10px/1.45 Arial,sans-serif;letter-spacing:.04em}.footer-credit small{color:#686868;text-transform:uppercase}
 dialog{border:0;padding:50px;max-width:720px;width:90%;background:var(--paper);color:var(--ink);max-height:85vh}
 dialog::backdrop{background:#000b}
 .close{float:right;border:0;background:none;cursor:pointer;margin:-20px -20px 20px 20px}
@@ -235,7 +236,7 @@ nav{gap:18px}
 .service-body{padding-left:40px;gap:25px}
 .family-head{grid-template-columns:1fr;gap:20px}.family-head p{font-size:16px}.service-family+.service-family{margin-top:60px}
 .case-grid{grid-template-columns:1fr 1fr}.case-heading{align-items:flex-start;flex-direction:column;gap:20px}.case-card{min-height:560px}
-footer{flex-wrap:wrap}
+footer{flex-wrap:wrap}.footer-credit{order:3;margin-left:0}.footer-credit+span{margin-left:auto}
 }
 @media(max-width:540px){nav{gap:15px;font-size:12px}
 .hero{padding:24px 5% 0}
@@ -267,6 +268,7 @@ footer{flex-wrap:wrap}
 .customer-fields{grid-template-columns:1fr}.brief-button{padding:18px}.brief-copy>span{display:none}
 footer{padding:30px 5%;gap:8px}
 footer p{width:100%;font-size:12px}
+.footer-credit{width:100%;grid-template-columns:1fr;padding:20px 0 14px;margin-top:18px;border-left:0;border-top:1px solid #aaa;gap:6px}.footer-credit strong{margin-bottom:4px}.footer-credit+span{margin-left:0}
 dialog{padding:30px}
 dialog h2{font-size:40px}
 }
